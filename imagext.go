@@ -130,7 +130,7 @@ func ToMonochrome(img *image.Gray, threshold uint8) {
 }
 
 // ToMedian sets median values for each pixel in its
-// area size*size. Median value in {9, 5, 17} is 9.
+// area size*size, e.g median value in {9, 5, 17} is 9.
 func ToMedian(img *image.Gray, size uint) {
 	if (img.Rect.Max.X-img.Rect.Min.X)*(img.Rect.Max.Y-img.Rect.Min.Y) > 0 && size > 1 {
 		lenImg := img.Rect.Max.X - img.Rect.Min.X
@@ -162,7 +162,7 @@ func ToMedian(img *image.Gray, size uint) {
 }
 
 // ToAvarage sets avarage values for each pixel in its
-// area size*size. Avarage value of {9, 5, 16} is 10.
+// area size*size, e.g. avarage value of {9, 5, 16} is 10.
 func ToAvarage(img *image.Gray, size uint) {
 	if (img.Rect.Max.X-img.Rect.Min.X)*(img.Rect.Max.Y-img.Rect.Min.Y) > 0 && size > 1 {
 		lenImg := img.Rect.Max.X - img.Rect.Min.X
