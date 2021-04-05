@@ -3,7 +3,7 @@
 [![GoDoc](https://godoc.org/github.com/vbsw/imagext?status.svg)](https://godoc.org/github.com/vbsw/imagext) [![Go Report Card](https://goreportcard.com/badge/github.com/vbsw/imagext)](https://goreportcard.com/report/github.com/vbsw/imagext) [![Stability: Experimental](https://masterminds.github.io/stability/experimental.svg)](https://masterminds.github.io/stability/experimental.html)
 
 ## About
-This package provides functions for images. Results may depend on format. Package has been written for fast prototyping.
+This package provides functions for images. It's written for fast prototyping. Results may depend on format.
 
 This Package is published on <https://github.com/vbsw/imagext>.
 
@@ -17,12 +17,18 @@ imagext Package is distributed in the hope that it will be useful, but WITHOUT A
 ## Example
 
 	package main
-	import "github.com/vbsw/imagext"
+	import (
+		"fmt"
+		"github.com/vbsw/imagext"
+	)
 
 	func main() {
 		imgColor := imagext.LoadImage("/home/alice/pictures/example.png")
 		imgGray := imagext.NewGray(imgColor)
-		imagext.SaveImage("/home/alice/pictures/example-gray.png", imgGray)
+		err := imagext.SaveImage("/home/alice/pictures/example-gray.png", imgGray)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
 	}
 
 ## References

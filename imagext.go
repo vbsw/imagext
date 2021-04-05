@@ -5,7 +5,7 @@
  *        http://www.boost.org/LICENSE_1_0.txt)
  */
 
-// Package imagext provides functions for images. Results may depend on format. Package has been written for fast prototyping.
+// Package imagext provides functions for images. It's written for fast prototyping. Results may depend on format.
 package imagext
 
 import (
